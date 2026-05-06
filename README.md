@@ -1,66 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚚 Sistem Tracking Bongkar Muat - PT CBA Chemical Industry
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem Tracking Bongkar Muat adalah aplikasi berbasis web yang dirancang untuk memantau, mencatat, dan mengoptimalkan alur kerja kendaraan logistik di lingkungan pabrik **PT CBA Chemical Industry**. Aplikasi ini memungkinkan pemantauan durasi setiap tahapan proses (security, loading, dokumentasi) secara realtime.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🌟 Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Real-time Dashboard**: Pantau status kendaraan yang sedang diproses secara langsung.
+- **Multi-Role Workflow**: Alur kerja yang terintegrasi antara Security, Petugas Loading, dan Officer TTB/SJ.
+- **Public Input (Supir)**: Driver atau vendor dapat menginput data kendaraan mereka secara mandiri melalui modal publik untuk mempercepat pendaftaran.
+- **Reporting & Export**: Ekspor laporan harian atau periode tertentu ke format Excel (.xlsx).
+- **Live Update Widget**: Widget di halaman depan yang menampilkan pembaruan status terakhir secara otomatis.
+- **Bulk Management**: Fitur admin untuk penghapusan data massal dan koreksi data master.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🔄 Alur Kerja (Workflow)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Sistem membagi proses menjadi beberapa tahap berurutan:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1.  **Registrasi (Security In)**: Input data awal kendaraan (Plat nomor, vendor, driver) oleh Security atau mandiri oleh Supir.
+2.  **Proses Bongkar/Muat**: Petugas Loading memulai proses (Loading Started) dan mencatat saat selesai (Loading Ended).
+3.  **Administrasi TTB/SJ**: Officer TTB memproses dokumen serah terima barang (TTB Started/Ended).
+4.  **Distribusi**: Penyerahan dokumen kembali ke Supir.
+5.  **Finalisasi (Security Out)**: Security melakukan verifikasi akhir dan mencatat waktu keluar kendaraan (Completed).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 👥 Peran Pengguna (User Roles)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Role | Deskripsi |
+| :--- | :--- |
+| **Admin** | Akses penuh: Edit data master, hapus data, kelola user, dan ekspor laporan. |
+| **Security** | Mencatat kendaraan masuk/keluar dan verifikasi input mandiri supir. |
+| **Loading** | Bertanggung jawab mencatat durasi proses fisik bongkar atau muat barang. |
+| **TTB/SJ** | Mengelola proses administrasi dokumen dan surat jalan. |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🛠️ Teknologi yang Digunakan
 
-## Contributing
+- **Backend**: [Laravel 10](https://laravel.com/)
+- **Frontend Interactivity**: [Livewire 3](https://livewire.laravel.com/) & [Alpine.js](https://alpinejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Database**: MySQL / MariaDB
+- **Excel Processing**: [Laravel Excel (Maatwebsite)](https://docs.laravel-excel.com/)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🚀 Instalasi & Setup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Prasyarat
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- MySQL Database
 
-## Security Vulnerabilities
+### Langkah-langkah
+1.  **Clone Repository**
+    ```bash
+    git clone [repository-url]
+    cd tracking-bongkar-muat
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2.  **Instal Dependensi**
+    ```bash
+    composer install
+    npm install
+    ```
 
-## License
+3.  **Konfigurasi Environment**
+    Copy file `.env.example` menjadi `.env` dan sesuaikan konfigurasi database.
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4.  **Database Migration**
+    ```bash
+    php artisan migrate
+    ```
+
+5.  **Build Assets & Run**
+    ```bash
+    npm run dev
+    php artisan serve
+    ```
+
+---
+
+## 📄 Lisensi
+Sistem ini dikembangkan secara internal untuk **PT CBA Chemical Industry**.
+
+---
+*Dibuat dengan ❤️ untuk efisiensi logistik.*
